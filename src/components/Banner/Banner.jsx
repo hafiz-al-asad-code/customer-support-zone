@@ -2,7 +2,7 @@ import React from "react";
 import bannerImgLeft from "../../assets/vector1.png";
 import bannerImgRight from "../../assets/vector2.png";
 
-const Banner = () => {
+const Banner = ({ selectedTickets, resolvedTasks }) => {
   return (
     <div className="grid grid-cols-2 gap-6 max-w-[1440px] mx-auto my-[50px] md:my-[80px]">
       {/* left */}
@@ -18,7 +18,7 @@ const Banner = () => {
           alt=""
         />
         <h3 className="mb-4 text-2xl">In-Progress</h3>
-        <h1 className="text-6xl font-semibold">0</h1>
+        <h1 className="text-6xl font-semibold">{selectedTickets.length}</h1>
       </div>
 
       {/* right */}
@@ -34,7 +34,7 @@ const Banner = () => {
           alt=""
         />
         <h3 className="mb-4 text-2xl">Resolved</h3>
-        <h1 className="text-6xl font-semibold">0</h1>
+        <h1 className="text-6xl font-semibold">{resolvedTasks.length}</h1>
       </div>
     </div>
   );

@@ -1,18 +1,45 @@
-import React from "react";
-import statusImg from "../../assets/Ellipse-22 .png";
+import React, { useState } from "react";
+import statusGreenImg from "../../assets/Ellipse-22.png";
+import statusYellowImg from "../../assets/Ellipse-23.png";
 import calenderImg from "../../assets/ri_calendar-line.png";
 
-const CustomerTicketsCard = ({ ticket }) => {
+const CustomerTicketsCard = ({
+  ticket,
+  selectedTickets,
+  setSelectedTickets,
+}) => {
+  const [toggle, setToggle] = useState("Open");
+
+  const handleAddTickets = (singleTicket) => {
+    if (toggle === "Open") {
+      setSelectedTickets([...selectedTickets, singleTicket]);
+    }
+  };
+
   return (
-    <div className="p-4 rounded-[4px] bg-white">
+    <div
+      onClick={() => {
+        handleAddTickets(ticket);
+        setToggle("In-Progress");
+      }}
+      className="p-4 rounded-[4px] bg-white shadow-xl"
+    >
       <div className="flex justify-between items-center">
         <h4 className="font-medium text-[#001931] text-[18px]">
           {ticket.title}
         </h4>
 
-        <div className="flex items-center gap-[6px] py-[4px] px-[12px] bg-[#B9F8CF] rounded-full">
-          <img src={statusImg} className="w-[16px] h-[16px]" alt="" />
-          <span className="font-medium text-[#0B5E06]">{ticket.status}</span>
+        <div
+          className={`flex items-center gap-[6px] py-[4px] px-[12px] ${toggle === "Open" ? "bg-[#B9F8CF] text-[#0B5E06]" : "bg-[#F8F3B9] text-[#9C7700]"}  rounded-full`}
+        >
+          <img
+            src={`${toggle === "Open" ? statusGreenImg : statusYellowImg}`}
+            className="w-[16px] h-[16px]"
+            alt=""
+          />
+          <span className="font-medium">
+            {toggle === "Open" ? ticket.status : toggle}
+          </span>
         </div>
       </div>
 
