@@ -4,6 +4,8 @@ import Banner from "./components/Banner/Banner";
 import MainSection from "./components/MainSection/MainSection";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import { ToastContainer } from "react-toastify";
+import Loader from "./components/Loader/Loader";
 
 const fetchTickets = async () => {
   const res = await fetch("data.json");
@@ -27,7 +29,8 @@ function App() {
           selectedTickets={selectedTickets}
           resolvedTasks={resolvedTasks}
         ></Banner>
-        <Suspense>
+
+        <Suspense fallback={<Loader></Loader>}>
           <MainSection
             ticketsPromise={ticketsPromise}
             selectedTickets={selectedTickets}
@@ -39,6 +42,8 @@ function App() {
       </div>
 
       <Footer></Footer>
+
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

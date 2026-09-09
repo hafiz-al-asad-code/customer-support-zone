@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-toastify";
 
 const TaskStatus = ({
   selectedTickets,
@@ -15,7 +16,7 @@ const TaskStatus = ({
 
     setResolvedTasks([...resolvedTasks, t]);
 
-    alert("The following problem has solved");
+    toast("The following problem has been solved");
   };
 
   return (

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import statusGreenImg from "../../assets/Ellipse-22.png";
 import statusYellowImg from "../../assets/Ellipse-23.png";
 import calenderImg from "../../assets/ri_calendar-line.png";
+import { toast } from "react-toastify";
 
 const CustomerTicketsCard = ({
   ticket,
@@ -14,7 +15,7 @@ const CustomerTicketsCard = ({
     if (toggle === "Open") {
       setSelectedTickets([...selectedTickets, singleTicket]);
 
-      alert("The following ticket has been added to the Task Status");
+      toast("The following ticket has been added to the Task Status");
     }
   };
 
