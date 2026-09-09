@@ -3,7 +3,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="bg-white py-[17.5px]">
+    <div className="bg-white py-[17.5px] px-3 lg:px-0">
       <div className="flex justify-between items-center max-w-[1440px] mx-auto">
         {/* left */}
         <div className="flex gap-[12px] items-center">
@@ -21,31 +21,31 @@ const Navbar = () => {
               className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
             >
               <li>
-                <a>Home</a>
+                <a href="">Home</a>
               </li>
               <li>
-                <a>FAQ</a>
+                <a href="">FAQ</a>
               </li>
               <li>
-                <a>Changelog</a>
+                <a href="">Changelog</a>
               </li>
               <li>
-                <a>Blog</a>
+                <a href="">Blog</a>
               </li>
               <li>
-                <a>Download</a>
+                <a href="">Download</a>
               </li>
               <li>
-                <a>Contact</a>
+                <a href="">Contact</a>
               </li>
               <li className="text-white bg-gradient-to-br from-[#632EE3] to-[#9F62F2] rounded-[4px]">
-                <a>+ New Ticket</a>
+                <a href="">+ New Ticket</a>
               </li>
             </ul>
           </div>
 
-          <h1 className="text-xl md:text-2xl font-bold text-[#130B2D] cursor-pointer">
-            CS — Ticket System
+          <h1 className="text-xl md:text-2xl font-bold text-[#130B2D]">
+            <a href="/">CS — Ticket System</a>
           </h1>
         </div>
 
@@ -71,8 +71,8 @@ const Navbar = () => {
               <a href="">Contact</a>
             </li>
           </ul>
-          <button className="font-semibold text-white bg-gradient-to-br from-[#632EE3] to-[#9F62F2] py-[12px] px-4 rounded-[4px] cursor-pointer">
-            + New Ticket
+          <button className="font-semibold text-white bg-gradient-to-br from-[#632EE3] to-[#9F62F2] py-[12px] px-4 rounded-[4px]">
+            <a href="">+ New Ticket</a>
           </button>
         </div>
       </div>

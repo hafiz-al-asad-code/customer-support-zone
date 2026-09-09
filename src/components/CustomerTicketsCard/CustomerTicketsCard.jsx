@@ -13,6 +13,8 @@ const CustomerTicketsCard = ({
   const handleAddTickets = (singleTicket) => {
     if (toggle === "Open") {
       setSelectedTickets([...selectedTickets, singleTicket]);
+
+      alert("The following ticket has been added to the Task Status");
     }
   };
 
@@ -22,7 +24,7 @@ const CustomerTicketsCard = ({
         handleAddTickets(ticket);
         setToggle("In-Progress");
       }}
-      className="p-4 rounded-[4px] bg-white shadow-xl"
+      className="p-4 rounded-[4px] bg-white shadow-xl cursor-pointer"
     >
       <div className="flex justify-between items-center">
         <h4 className="font-medium text-[#001931] text-[18px]">

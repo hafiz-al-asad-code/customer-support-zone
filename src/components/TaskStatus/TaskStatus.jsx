@@ -14,6 +14,8 @@ const TaskStatus = ({
     setSelectedTickets(filteredTaskTickets);
 
     setResolvedTasks([...resolvedTasks, t]);
+
+    alert("The following problem has solved");
   };
 
   return (
@@ -36,7 +38,7 @@ const TaskStatus = ({
               </p>
               <button
                 onClick={() => handleCompletedTask(singleTicket)}
-                className="font-semibold text-white bg-[#02A53B] py-3 rounded-[4px] w-full"
+                className="font-semibold text-white bg-[#02A53B] py-3 rounded-[4px] w-full cursor-pointer"
               >
                 Complete
               </button>

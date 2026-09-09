@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CustomerTickets from "../CustomerTickets/CustomerTickets";
 import TaskStatus from "../TaskStatus/TaskStatus";
 import ResolvedTask from "../ResolvedTask/ResolvedTask";
@@ -11,7 +11,7 @@ const MainSection = ({
   setResolvedTasks,
 }) => {
   return (
-    <div className="max-w-[1440px] mx-auto lg:grid grid-cols-12 gap-8">
+    <div className="max-w-[1440px] mx-auto lg:grid grid-cols-12 gap-8 mb-[50px] md:mb-[80px]">
       <div className="col-span-9">
         <CustomerTickets
           ticketsPromise={ticketsPromise}
